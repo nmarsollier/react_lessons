@@ -18,7 +18,7 @@ export default function Comment() {
 }
 
 /**
- * Podemos usar componentes html y expresiones jsf para las propiedades
+ * Podemos usar componentes html y expresiones jsx para las propiedades
  *
  */
 function Avatar(props) {

@@ -34,9 +34,17 @@ class Toggle extends React.Component {
     }
 
     handleClick() {
-        this.setState(state => ({
-            isToggleOn: !state.isToggleOn
-        }));
+        let newState = {
+            isToggleOn: !this.state.isToggleOn
+        }
+        this.setState(newState);
+    }
+
+    handleClickExp() {
+        let newState = {
+            isToggleOn: !this.state.isToggleOn
+        }
+        this.setState(newState);
     }
 
     // O bien podemos definirlo asi , que es mi preferido
@@ -52,6 +60,11 @@ class Toggle extends React.Component {
                 <button onClick={this.handleClick}>
                     {this.state.isToggleOn ? 'ON' : 'OFF'}
                 </button>
+
+                <button onClick={() => this.handleClickExp()}>
+                    {this.state.isToggleOn ? 'ON' : 'OFF'}
+                </button>
+
                 <button onClick={this.handleClickVar}>
                     {this.state.isToggleOn ? 'ON' : 'OFF'}
                 </button>

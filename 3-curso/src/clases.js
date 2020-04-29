@@ -9,14 +9,14 @@ import React from "react"
  * El mismo ejemplo anterior escrito en una clase seria
  */
 export default class HelloClassSample extends React.Component {
-    render() {
-        let nombre2 = "Bruno"
+    nombre2 = "Bruno"
 
+    render() {
         return (
             <div>
                 <HelloClassElement />
                 <HelloClassElement name="Nestor" />
-                <HelloClassElement name={nombre2} />
+                <HelloClassElement name={this.nombre2} />
             </div>
         );
     }

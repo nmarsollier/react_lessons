@@ -6,7 +6,16 @@ import React from "react"
 export default class Clock extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { date: new Date() };
+        this.state = {
+            date: new Date(),
+            name: "Nestor"
+        };
+    }
+
+    tick() {
+        this.setState({
+            date: new Date()
+        });
     }
 
     componentDidMount() {
@@ -18,12 +27,6 @@ export default class Clock extends React.Component {
 
     componentWillUnmount() {
         clearInterval(this.timerID);
-    }
-
-    tick() {
-        this.setState({
-            date: new Date()
-        });
     }
 
     render() {
