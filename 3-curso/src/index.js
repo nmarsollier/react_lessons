@@ -1,20 +1,18 @@
 import React from "react";
-import ReactDOM from "react-dom"
-
+import ReactDOM from "react-dom";
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
+  Link, Route, Switch
 } from "react-router-dom";
+import HelloJSXSample from "./1_hello";
+import HelloClassSample from "./2_hello_class";
+import Expresiones from "./3_expresiones";
+import Clock from "./4_clock";
+import { ActionLink, Toggle } from "./5_eventos";
+import { NumberList, NumberList2 } from "./6_tips";
+import { NameForm } from "./7_forms";
+import EjemploRedux from "./8_redux/5_redux";
 
-import HelloJSXSample from "./jsx"
-import HelloClassSample from "./clases"
-import Expresiones from "./expresiones"
-import Clock from "./estadoClases"
-import { ActionLink, Toggle } from "./eventos"
-import { NumberList, NumberList2 } from "./tips";
-import { NameForm } from "./forms"
 
 export default function App() {
   return (
@@ -28,6 +26,7 @@ export default function App() {
         <Link to="/eventos">Eventos </Link><br />
         <Link to="/tips">Tips </Link><br />
         <Link to="/forms">Formularios </Link><br />
+        <Link to="/redux">Redux </Link><br />
 
         <Switch>
           <Route path="/helloFunc">
@@ -55,9 +54,10 @@ export default function App() {
             </div>
           </Route>
           <Route path="/forms">
-            <div>
-              <NameForm />
-            </div>
+            <NameForm />
+          </Route>
+          <Route path="/redux">
+            <EjemploRedux />
           </Route>
 
           <Route path="/">
