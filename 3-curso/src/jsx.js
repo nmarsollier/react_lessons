@@ -38,7 +38,7 @@ export default function HelloJSXSample() {
 // con html.
 // props son las propiedades que le pasamos al componente
 function HelloJSXItem(props) {
-    if (props.name) {
+    if (props.name !== undefined) {
         return (<h1>HelloJSXItem, {props.name}!</h1>);
     }
     return <h1>HelloJSXItem, Stranger.</h1>;

@@ -7,21 +7,23 @@ import React from "react"
 export default class NameForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { value: '' };
+        this.state = { nombrePersona: '' };
     }
 
     // Cuando los formularios son complejos, conviene actualizar el estado cuando
     // los elementos cambian, y mantener el estado actualizado
     // Conviene hacerse librerias que hagan esto de forma consistente en toda la app
     handleChange = (event) => {
-        this.setState({ value: event.target.value });
+        let newState ={}
+        newState[event.target.id] = event.target.value
+        this.setState(newState);
     }
 
     // Ya no quieremos subir mas el formulario automaticamente, en su lugar queremos
     // usar codigo javascript para subir nuestro documento en una llamada rest
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log('A name was submitted: ' + this.state.value);
+        console.log('A name was submitted: ' + this.state.nombrePersona);
     }
 
     render() {
@@ -29,7 +31,7 @@ export default class NameForm extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <label>
                     Name:
-                        <input type="text" value={this.state.value} onChange={this.handleChange} />
+                        <input id="nombrePersona" type="text" value={this.state.nombrePersona} onChange={this.handleChange} />
                 </label>
                 <input type="submit" value="Submit" />
             </form>

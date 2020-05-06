@@ -10,9 +10,13 @@ function NumberList() {
     const numbers = [0, 1, 2, 3, 4, 5];
     return (
         <ul>
-            {numbers.map((number) =>
-                <li key={number.toString()}>{number}</li>
-            )}
+            {numbers
+                .filter((number) =>
+                    number < 3
+                )
+                .map((number) =>
+                    <li key={number.toString()}>{number}</li>
+                )}
         </ul>
     );
 }
@@ -34,7 +38,6 @@ function NumberList2(props) {
     const listItems = numbers.map((number) =>
         // Correcto! La key debería ser especificada dentro del array.
         <ListItem key={number.toString()} value={number} />
-
     );
     return (
         <ul>

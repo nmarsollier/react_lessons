@@ -25,10 +25,10 @@ export default class HelloClassSample extends React.Component {
 class HelloClassElement extends React.Component {
     render() {
         // Las propiedades del elemento las recibimos en una property de la clase
-        if (!this.props.name) {
+        if (this.props.name === undefined) {
             // Null es un retorno totalmente valido, y lo que hace es no renderizar nada
             return null;
         }
-        return (<h1>HelloClassElement, {this.props.name}!</h1>);
+        return <h1>HelloClassElement, {this.props.name}!</h1>;
     }
 }
