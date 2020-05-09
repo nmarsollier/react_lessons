@@ -12,7 +12,8 @@ import { ActionLink, Toggle } from "./5_eventos";
 import { NumberList, NumberList2 } from "./6_tips";
 import { NameForm } from "./7_forms";
 import EjemploRedux from "./8_redux/5_redux";
-
+import { StyleCSS, StyleObject, StyleCssFile, StyleModuleCssFile } from "./9_css";
+import NetworkCall from "./10_network";
 
 export default function App() {
   return (
@@ -27,6 +28,8 @@ export default function App() {
         <Link to="/tips">Tips </Link><br />
         <Link to="/forms">Formularios </Link><br />
         <Link to="/redux">Redux </Link><br />
+        <Link to="/css">Estilos CSS </Link><br />
+        <Link to="/network">Acceso a red</Link><br />
 
         <Switch>
           <Route path="/helloFunc">
@@ -58,6 +61,17 @@ export default function App() {
           </Route>
           <Route path="/redux">
             <EjemploRedux />
+          </Route>
+          <Route path="/css">
+            <div>
+              <StyleCSS />
+              <StyleObject />
+              <StyleCssFile />
+              <StyleModuleCssFile />
+            </div>
+          </Route>
+          <Route path="/network">
+            <NetworkCall />
           </Route>
 
           <Route path="/">
