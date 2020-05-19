@@ -18,7 +18,7 @@ export default function HooksNetworkCall() {
     // el segundo llamado de useCallback es lo mismo, pero
     const fetchData = React.useCallback(async () => {
         try {
-            const response = await axios.get('https://api.github.com/users/nmarsollier/repos?access_token=a54054edbe26456225aa8907870d4c3c97b87605')
+            const response = await axios.get('https://api.github.com/users/nmarsollier/repos')
             setRepositories(response.data)
         } catch (e) {
             console.log(e)
