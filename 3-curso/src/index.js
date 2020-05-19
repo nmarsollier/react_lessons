@@ -14,6 +14,8 @@ import { NameForm } from "./7_forms";
 import EjemploRedux from "./8_redux/5_redux";
 import { StyleCSS, StyleObject, StyleCssFile, StyleModuleCssFile } from "./9_css";
 import NetworkCall from "./10_network";
+import { HooksToggle, HooksClock } from "./11_hooks_eventos";
+import HooksNetworkCall from "./12_hooks_network";
 
 export default function App() {
   return (
@@ -30,6 +32,9 @@ export default function App() {
         <Link to="/redux">Redux </Link><br />
         <Link to="/css">Estilos CSS </Link><br />
         <Link to="/network">Acceso a red</Link><br />
+        <Link to="/hooks">Hooks</Link><br />
+        <Link to="/hooksNet">Hooks NetworkCall</Link><br />
+
 
         <Switch>
           <Route path="/helloFunc">
@@ -73,7 +78,17 @@ export default function App() {
           <Route path="/network">
             <NetworkCall />
           </Route>
-
+          <Route path="/hooks">
+            <div>
+              <HooksToggle />
+              <HooksClock />
+            </div>
+          </Route>
+          <Route path="/hooksNet">
+            <div>
+              <HooksNetworkCall />
+            </div>
+          </Route>
           <Route path="/">
             <Home />
           </Route>
@@ -84,7 +99,7 @@ export default function App() {
 }
 
 ReactDOM.render(
-  <App></App>,
+  <App />,
   document.getElementById('root')
 )
 

@@ -76,7 +76,6 @@ class StyleModuleCssFile extends React.Component {
                 <h1 className={styles.title}>Hello StyleModuleCssFile!</h1>
             </div>
         );
-
     }
 }
 

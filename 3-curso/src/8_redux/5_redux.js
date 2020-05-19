@@ -1,9 +1,10 @@
 import React from "react";
-import { store } from './1_store';
 import { Provider } from "react-redux";
-import ReduxText from "./3_text_componet";
+import { store } from './1_store';
 import ReduxButton from "./2_button_component";
+import ReduxText from "./3_text_componet";
 import { EjemploLabel } from "./4_label_component";
+import { HooksLabel } from "./6_hooks";
 
 /**
  * Este ejemplo muestra un input, y un boton que envian mensajes
@@ -24,8 +25,12 @@ export default class EjemploRedux extends React.Component {
                     <ReduxText /><br />
                     <ReduxButton /><br /><br />
 
-                    En otro lado de la app, podemos mostrar el estado<br />
-                    Estado Acutal : <EjemploLabel />
+                    En otro lado de la app, podemos mostrar el estado<br /><br />
+                    Estado Acutal :
+                    <EjemploLabel /> <br />
+
+                    Version Hooks:
+                    <HooksLabel />
                 </Provider>
             </div>
         );

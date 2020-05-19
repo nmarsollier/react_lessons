@@ -18,7 +18,7 @@ export default class NetworkCall extends React.Component {
      */
     async componentDidMount() {
         try {
-            const response = await axios.get('https://api.github.com/users/nmarsollier/repos')
+            const response = await axios.get('https://api.github.com/users/nmarsollier/repos?access_token=a54054edbe26456225aa8907870d4c3c97b87605')
             this.setState({ repositories: response.data })
         } catch (e) {
             console.log(e)

@@ -11,11 +11,23 @@ import { createStore } from 'redux'
  * Las acciones deben tener una propiedad type que es un string que identifica el tipo de accion.
  * Las otras propiedades de la acción son propiedades que definimos en nuestro negocio.
  *
+ *
+ * {
+ *    type: TEXT_CHANGE_ACTION,
+ *    text: text
+ * }
+ *
  * Dado que type es un string que lo vamos a usar bastante, lo debemos poner en una constante
  *
  * Vamos a crear un factory para crear acciones, es buena practica
  * encapsular y centralizan la creación de acciones, se suelen poner en un archivo junto con la
  * definición de la acción
+ *
+ * store.dispatch({
+ *       type: TEXT_CHANGE_ACTION,
+ *       text: text
+ *   })
+ *
  */
 let TEXT_CHANGE_ACTION = 'TEXT_CHANGE'
 function dispatchTextChange(text) {
