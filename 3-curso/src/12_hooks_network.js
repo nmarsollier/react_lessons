@@ -1,5 +1,5 @@
 import axios from "axios"
-import React from "react"
+import React, { useEffect } from "react"
 
 /**
  * Para obtener datos desde la web podemos usar fetch, pero es muy limitado
@@ -25,9 +25,9 @@ export default function HooksNetworkCall() {
         }
     }, [])
 
-    React.useEffect(() => {
+    useEffect(() => {
         fetchData()
-    })
+    }, [])
 
     return <div>
         <h1>Repositorios con Hooks</h1>
