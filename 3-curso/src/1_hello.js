@@ -1,19 +1,19 @@
 import React from "react"
 
 /**
- * En react la idea es crear tags html, los elementos html se escriben siempre en minusculas,
- *  notar la diferencia entre div y HelloJSKItem, en react tenemos mas libertad de definicion.
+ * En react la idea es crear tags html, los elementos html se escriben siempre en minúsculas,
+ *  notar la diferencia entre div y HelloJSKItem, en react tenemos mas libertad de definición.
  *
- * La forma mas sencilla es con una funcion, una funcion utilizando JSX.
+ * La forma mas sencilla es con una función, una función utilizando JSX.
  * Estos se llaman componentes funcionales
  *
- * Una funcion que retorne JSX es una fnucion que se convierte en un elemento DOM de react.
+ * Una función que retorne JSX es una función que se convierte en un elemento DOM de react.
  *
- * por ejemplo esta funcion la vamos a ver usada en index.js como
+ * por ejemplo esta función la vamos a ver usada en index.js como
  * <HelloJSXSample />
  *
  * Como vemos mas adelante, la forma de desarrollar nuestras aplicaciones
- * es a travez de componentes, que se componen de componentes mas pequeños
+ * es a través de componentes, que se componen de componentes mas pequeños
  */
 
 // export default nos va a permitir exportar este componente
@@ -28,18 +28,18 @@ export default function HelloJSXSample() {
     return (
         <div>
             <HelloJSXItem />
-            <HelloJSXItem name="Nestor" />
+            <HelloJSXItem name="Nestor" address="calle 1"/>
             <HelloJSXItem name={nombre2} />
         </div>
     )
 }
 
-// Con JSX podemos utilizar un lenguage de expresiones que podemos combinar
+// Con JSX podemos utilizar un lenguaje de expresiones que podemos combinar
 // con html.
 // props son las propiedades que le pasamos al componente
 function HelloJSXItem(props) {
     if (props.name !== undefined) {
-        return (<h1>HelloJSXItem, {props.name}!</h1>);
+        return (<h1>HelloJSXItem, {props.name}! {props.address}</h1>);
     }
     return <h1>HelloJSXItem, Stranger.</h1>;
 }

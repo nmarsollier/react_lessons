@@ -11,7 +11,7 @@ function ActionLink() {
     }
 
     return (
-        <a href="#a" onClick={handleClick}>
+        <a href="#" onClick={handleClick}>
             Click me
         </a>
     );
@@ -27,6 +27,7 @@ function ActionLink() {
 class Toggle extends React.Component {
     constructor(props) {
         super(props);
+        
         this.state = { isToggleOn: true };
 
         // Este enlace es necesario para hacer que `this` funcione en el callback

@@ -7,6 +7,7 @@ import React from "react"
 export default class NameForm extends React.Component {
     constructor(props) {
         super(props);
+
         this.state = { nombrePersona: '' };
     }
 
@@ -14,9 +15,7 @@ export default class NameForm extends React.Component {
     // los elementos cambian, y mantener el estado actualizado
     // Conviene hacerse librerias que hagan esto de forma consistente en toda la app
     handleChange = (event) => {
-        let newState ={}
-        newState[event.target.id] = event.target.value
-        this.setState(newState);
+        this.setState({ nombrePersona: event.target.value });
     }
 
     // Ya no quieremos subir mas el formulario automaticamente, en su lugar queremos
@@ -33,6 +32,7 @@ export default class NameForm extends React.Component {
                     Name:
                         <input id="nombrePersona" type="text" value={this.state.nombrePersona} onChange={this.handleChange} />
                 </label>
+                                
                 <input type="submit" value="Submit" />
             </form>
         );

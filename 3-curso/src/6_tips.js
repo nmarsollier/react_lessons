@@ -27,7 +27,7 @@ function NumberList() {
  * Normalmente es el id del elemento y agiliza el agregado y borrado de elementos en la ui
  */
 function ListItem(props) {
-    // Correcto! No hay necesidad de especificar la key aquí:
+    // No hay necesidad de especificar la key aquí:
     return <li>{props.value}</li>;
 }
 
@@ -35,10 +35,12 @@ function ListItem(props) {
 // componente que mapeamos
 function NumberList2(props) {
     const numbers = props.numbers;
+
     const listItems = numbers.map((number) =>
         // Correcto! La key debería ser especificada dentro del array.
         <ListItem key={number.toString()} value={number} />
     );
+    
     return (
         <ul>
             {listItems}

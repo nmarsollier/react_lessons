@@ -1,7 +1,7 @@
 import React from "react"
 
 /**
- * La forma mas recomendada, y mas completa, es definir los componentes como
+ * Una forma completa, es definir los componentes como
  * clases, el nombre de la clase es el nombre del componente.
  *
  * Para ello tenemos que extender de React.Component
