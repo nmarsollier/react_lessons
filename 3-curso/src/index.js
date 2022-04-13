@@ -1,9 +1,12 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import {
-  BrowserRouter as Router,
-  Link, Route, Switch
+  BrowserRouter,
+  Link, Outlet, Route, Routes
 } from "react-router-dom";
+import NetworkCall from "./10_network";
+import { HooksClock, HooksToggle } from "./11_hooks_eventos";
+import HooksNetworkCall from "./12_hooks_network";
 import HelloJSXSample from "./1_hello";
 import HelloClassSample from "./2_hello_class";
 import Expresiones from "./3_expresiones";
@@ -12,14 +15,11 @@ import { ActionLink, Toggle } from "./5_eventos";
 import { NumberList, NumberList2 } from "./6_tips";
 import { NameForm } from "./7_forms";
 import EjemploRedux from "./8_redux/5_redux";
-import { StyleCSS, StyleObject, StyleCssFile, StyleModuleCssFile } from "./9_css";
-import NetworkCall from "./10_network";
-import { HooksToggle, HooksClock } from "./11_hooks_eventos";
-import HooksNetworkCall from "./12_hooks_network";
+import { StyleCSS, StyleCssFile, StyleModuleCssFile, StyleObject } from "./9_css";
 
 export default function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <div>
         <Link to="/">Home</Link><br />
         <Link to="/helloFunc">Hola Funcional y JSX</Link><br />
@@ -35,73 +35,60 @@ export default function App() {
         <Link to="/hooks">Hooks</Link><br />
         <Link to="/hooksNet">Hooks NetworkCall</Link><br />
 
-
-        <Switch>
-          <Route path="/helloFunc">
-            <HelloJSXSample />
-          </Route>
-          <Route path="/helloClass">
-            <HelloClassSample />
-          </Route>
-          <Route path="/expresions">
-            <Expresiones />
-          </Route>
-          <Route path="/estado">
-            <Clock />
-          </Route>
-          <Route path="/eventos">
+        <Routes>
+          <Route path="/helloFunc" element={<HelloJSXSample />} />
+          <Route path="/helloClass" element={<HelloClassSample />} />
+          <Route path="/expresions" element={<Expresiones />} />
+          <Route path="/estado" element={<Clock />} />
+          <Route path="/eventos" element={
             <div>
               <ActionLink />
-              <Toggle />
+              <Toggle />s
             </div>
-          </Route>
-          <Route path="/tips">
+          } />
+          <Route path="/tips" element={
             <div>
               <NumberList />
               <NumberList2 numbers={[1, 2, 3]} />
             </div>
-          </Route>
-          <Route path="/forms">
-            <NameForm />
-          </Route>
-          <Route path="/redux">
-            <EjemploRedux />
-          </Route>
-          <Route path="/css">
+          } />
+          <Route path="/forms" element={<NameForm />} />
+          <Route path="/redux" element={<EjemploRedux />} />
+          <Route path="/css" element={
             <div>
               <StyleCSS />
               <StyleObject />
               <StyleCssFile />
               <StyleModuleCssFile />
             </div>
-          </Route>
-          <Route path="/network">
-            <NetworkCall />
-          </Route>
-          <Route path="/hooks">
+          } />
+          <Route path="/network" element={<NetworkCall />} />
+          <Route path="/hooks" element={
             <div>
               <HooksToggle />
               <HooksClock />
             </div>
-          </Route>
-          <Route path="/hooksNet">
+          } />
+          <Route path="/hooksNet" element={
             <div>
               <HooksNetworkCall />
             </div>
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
+          } />
+          <Route path="/" element={<Home />} />
+        </Routes>
       </div>
-    </Router>
+
+      <Outlet />
+    </BrowserRouter>
   );
 }
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-)
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <App />
+
+  </React.StrictMode>
+);
 
 /**
  * Render renderiza un elemento en la pantalla,
